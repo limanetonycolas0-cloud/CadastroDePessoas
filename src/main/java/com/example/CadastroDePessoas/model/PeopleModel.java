@@ -1,6 +1,13 @@
 package com.example.CadastroDePessoas.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tb_cadastros")
 public class PeopleModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     private String name;
     private int age;
     private String job;
