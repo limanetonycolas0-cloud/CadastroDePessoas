@@ -1,5 +1,7 @@
-package com.example.CadastroDePessoas.model;
+package people;
 import jakarta.persistence.*;
+import tasks.TasksCompany;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastros")
@@ -13,6 +15,11 @@ public class PeopleModel {
     private String job;
     private double salary;
     private String city;
+
+    //@ManyToOne an employee has only task
+    @ManyToOne
+    @JoinColumn(name = "tasks_id")//Juntando as duas colunas, Foreign key
+    private TasksCompany tasks;
 
 
     PeopleModel(){
