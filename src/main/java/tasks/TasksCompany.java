@@ -1,9 +1,14 @@
 package tasks;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import people.PeopleModel;
 
 import java.util.List;
-
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "tb_hobbies")
 public class TasksCompany {
@@ -18,8 +23,6 @@ public class TasksCompany {
     @OneToMany(mappedBy = "tasks")
     private List<PeopleModel> employees;
 
-    TasksCompany() {
-    }
 
     TasksCompany(Long id, String taskName, int deadLine, String difficulty) {
         this.id = id;
@@ -28,35 +31,4 @@ public class TasksCompany {
         this.difficulty = difficulty;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
-
-    public int getDeadLine() {
-        return deadLine;
-    }
-
-    public void setDeadLine(int deadLine) {
-        this.deadLine = deadLine;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
 }
