@@ -7,7 +7,7 @@ public class PeopleModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     private String name;
     private int age;
     private String job;
